@@ -1,1 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web development final project - Henry Holben</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        body {
+    background-color: grey;
+}
+H1 {
+    color: lightblue;
+    position: relative;
+    left: 40%;
+   
+}
+
+#title {
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    background-color: gray;
+}
+
+#textbookInput {
+    position: relative;
+}
+
+#info {
+    color: white;
+}
+    </style>
+</head>
+
+<body>
+    <div id="title"> 
+        <H1>Textbook Wizard</H1>
+    </div>
+    
+    <div id="account">
+        <a href="./accountPage.html" id="info">Create an account (Save your credit card info!)</a>
+    </div>
+    <div id="accPage">
+        <a href="./accountHub.html">Account page</a>
+    </div>
+    <div id="info">
+        <p>
+            Welcome to Textbook Wizard! Here you will be able to find
+            where to buy the cheapest textbook that you are looking for.
+            In the text field below input the name of the textbook that you are looking for.
+        </p>
+    </div>
+    <div id="textbookInput">
+        <label>Name of textbook:</label><br>
+        <input type="text" id="textbookName">
+        <button type ="button" id="textbookNameSubmit">Search</button>
+    </div>
+
+    <script>
+    document.getElementById("textbookNameSubmit").onclick = function(){
+    var textbook = document.getElementById("textbookName").value;
+    document.getElementById("AmazonLink").href=("https://www.amazon.com/s?k=" + textbook);
+    document.getElementById("abeBooksLink").href=("https://www.abebooks.com/servlet/SearchResults?kn=" + textbook);
+    document.getElementById("barnesAndNobleLink").href=("https://www.barnesandnoble.com/s/" + textbook);
+    document.getElementById("bigWordsLink").href=("https://www.bigwords.com/search?tab=get&pageNumber=1&searchType=Books&keywords=" + textbook + "&isbn=&author=&publisher=");
+    document.getElementById("booksRunLink").href=("https://booksrun.com/search/" + textbook);
+    document.getElementById("campusBooksLink").href=("https://www.campusbooks.com/books/search?keywords=" + textbook);
+    document.getElementById("cheapestTextbooksLink").href=("https://www.cheapesttextbooks.com/IM/?keyval=" + textbook);
+    document.getElementById("cheggLink").href=("https://www.chegg.com/search?q=" + textbook + "&trackid=ad90db16b2d8&strackid=960d7c13ba81&contentType=textbooks");
+    document.getElementById("ecampusLink").href=("https://www.ecampus.com/search-results?terms=" + textbook);
+    }
+    </script>
+
+    <div>
+        <p id="info"> Here are some possible websites</p>
+        <a href="https://www.abebooks.com/" target="_blank" rel="noopener noreferrer" id="abeBooksLink">
+            <img alt="Abe Books" src="./Images/AbeBooksLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://www.amazon.com/" target="_blank" rel="noopener noreferrer" id="AmazonLink">
+            <img alt="Amazon" src="Images/AmazonLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://www.barnesandnoble.com/" target="_blank" rel="noopener noreferrer" id="barnesAndNobleLink">
+            <img alt="Barnes and Noble" src="Images/BarnesAndNobleLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://www.bigwords.com/" target="_blank" rel="noopener noreferrer" id="bigWordsLink">
+            <img alt="Big Words" src="Images/BigWordsLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://booksrun.com/" target="_blank" rel="noopener noreferrer" id="booksRunLink"> 
+            <img alt="Books Run" src="Images/BooksRunLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://www.campusbooks.com/" target="_blank" rel="noopener noreferrer" id="campusBooksLink">
+            <img alt="Campus Books" src="Images/CampusBooksLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://www.cheapesttextbooks.com/" target="_blank" rel="noopener noreferrer" id="cheapestTextbooksLink">
+            <img alt="Cheapest Textbooks" src="Images/CheapestTextbooks.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <a href="https://www.chegg.com/books" target="_blank" rel="noopener noreferrer" id="cheggLink">
+            <img alt="Chegg" src="Images/CheggLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+         <!-- <a href="https://www.collegebooksdirect.com/">
+            <img alt="College Books Direct" src="Images/CollegeBooksDirectLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to cart</button>
+         <br> -->
+         <a href="https://www.ecampus.com/" id="ecampusLink">
+            <img alt="E Campus" src="Images/ECampusLogo.png"
+            width=150" height="70">
+         </a>
+         <button>add textbook to list</button>
+         <br>
+    </div>
+
+    <div>
+        <p id="info">If you found a textbook you liked, leave a review of the wbesite and enter the textbook name</p>
+        
+        <form class="container" method="post" action="/">
+            Website Name
+            Write exactly as: Abe Books, Amazon, Barnes and Noble, Big Words, Books Run, Campus Books, Cheapest Textbooks, Chegg, or E Campus <br> 
+            <div class="form-group">
+                <input class="form-control" name="website">
+            </div>
+            Your review
+            <div class="form-group">
+                <textarea class="form-control" name="review"></textarea>
+            </div>
+            Textbook Name
+            <div class="form-group">
+                <input class="form-control" name="enterTextbook">
+            </div>
+            <button>Submit Information</button>
+         </form>
+    </div>
+
+    <div>
+        <p id="info">Delete a textbook from the database?</p>
+
+        <form class="container" method="get" action="/">
+            If so, enter the textbook name
+            <div class="form-group">
+                <input class="form-control" name="delete">
+            </div>
+            <button>Delete</button>
+        </form>
+
+    </div>
+
+    <div>
+        <p id="info">Send your repository to others?</p>
+
+        <form class="container" method="get" action="/">
+            If so, enter the email of the recipient. The subject of the email will be your ([user name]'s textbook list')
+            <div class="form-group">
+                <input class="form-control" name="delete">
+            </div>
+            <button>send</button>
+        </form>
+        
+    </div>
+
+</body>
+</html>
